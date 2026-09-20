@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幻梦唯心三部曲 - 沉浸式奇幻文学与世界观构建指南</title>
+    <meta name="description" content="幻梦唯心三部曲官方网站，提供第一部《梦界回响》与第二部《心渊凝视》的深度解读、角色图鉴、世界观背景设定及作者创作手记。探索唯心主义与克苏鲁神话交织的宏大奇幻世界。">
+    <meta name="keywords" content="幻梦唯心三部曲, 梦界回响, 心渊凝视, 唯心主义文学, 奇幻小说, 网络文学, 世界观设定">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-deep: #050508;
+            --bg-card: #0f0f16;
+            --text-main: #e0e0e0;
+            --text-muted: #9ca3af;
+            --accent-primary: #8b5cf6; /* Violet */
+            --accent-secondary: #06b6d4; /* Cyan */
+            --accent-glow: rgba(139, 92, 246, 0.3);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --font-serif: "Georgia", "Times New Roman", serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent-secondary), var(--accent-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(5, 5, 8, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #fff;
+        }
+
+        .cta-btn {
+            padding: 0.5rem 1.2rem;
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent-primary);
+            color: #fff;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at center, #1a1a2e 0%, var(--bg-deep) 70%);
+            overflow: hidden;
+            padding-top: 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--border-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.1;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+            40% {transform: translateX(-50%) translateY(-10px);}
+            60% {transform: translateX(-50%) translateY(-5px);}
+        }
+
+        /* Intro Section */
+        .intro {
+            padding: 6rem 0;
+            background-color: var(--bg-deep);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-text p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .intro-visual {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, var(--bg-card), #1e1b4b);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .intro-visual::after {
+            content: '◈';
+            font-size: 10rem;
+            color: rgba(255,255,255,0.03);
+        }
+
+        /* Series Overview */
+        .series {
+            padding: 6rem 0;
+            background-color: #08080c;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .book-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: var(--accent-primary);
+        }
+
+        .book-cover {
+            height: 400px;
+            background: #1f1f2e;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book-cover span {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: rgba(255,255,255,0.1);
+        }
+
+        .book-info {
+            padding: 1.5rem;
+        }
+
+        .book-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .book-meta {
+            font-size: 0.9rem;
+            color: var(--accent-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .book-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .book-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            color: var(--text-muted);
+        }
+
+        /* World Building / Lore */
+        .lore {
+            padding: 6rem 0;
+            background-color: var(--bg-deep);
+        }
+
+        .lore-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+        }
+
+        .lore-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .lore-nav {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .lore-nav li {
+            padding: 0.8rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            color: var(--text-muted);
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .lore-nav li:hover, .lore-nav li.active {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--accent-primary);
+        }
+
+        .lore-content h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .lore-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .lore-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.03);
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .stat-num {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-secondary);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 0;
+            background-color: #08080c;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            padding: 1.5rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: var(--accent-primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0 2rem;
+            background-color: var(--bg-deep);
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .intro-grid, .lore-container { grid-template-columns: 1fr; }
+            .lore-sidebar { position: static; margin-bottom: 2rem; }
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">幻梦<span>唯心</span></a>
+                <div class="nav-links">
+                    <a href="#intro" class="active">序章</a>
+                    <a href="#series">三部曲</a>
+                    <a href="#lore">世界观</a>
+                    <a href="#faq">读者问答</a>
+                </div>
+                <a href="#read" class="cta-btn">开始阅读</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>当梦境成为现实<br>唯心者重塑世界</h1>
+                <p>《幻梦唯心三部曲》—— 一场关于意识、深渊与存在的宏大叙事。跟随主角的视角，探索现实与虚幻的边界。</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="#series" class="cta-btn" style="background: var(--accent-primary); color: white; border: none;">探索三部曲</a>
+                    <a href="#lore" class="cta-btn" style="border-color: var(--text-muted); color: var(--text-muted);">阅读设定</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section id="intro" class="intro">
+            <div class="container">
+                <div class="intro-grid">
+                    <div class="intro-visual">
+                        <span>◈◈◈</span>
+                    </div>
+                    <div class="intro-text">
+                        <h2>关于“唯心”的重新定义</h2>
+                        <p>在传统的奇幻文学中，魔法往往源于外部的元素力量。而在《幻梦唯心三部曲》的世界观里，力量源于观察者的意志。世界并非客观存在，而是由无数个体的潜意识共同编织的宏大图景。</p>
+                        <p>故事始于一个名为“静默回廊”的异常空间，这里的人们能够通过深度冥想进入精神世界，甚至修改现实的物理法则。然而，当这种力量被滥用，现实的基石开始崩塌。</p>
+                        <p>这不仅是一部冒险小说，更是一次对哲学命题的探讨：如果梦境是真实的，那么现实是否只是另一种形式的梦？</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Series Overview -->
+        <section id="series" class="series">
+            <div class="container">
+                <h2 class="section-title">三部曲作品</h2>
+                <p class="section-subtitle">从觉醒到救赎，一段跨越三个世纪的旅程</p>
+                
+                <div class="book-grid">
+                    <!-- Book 1 -->
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <span>Ⅰ</span>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">梦界回响</h3>
+                            <div class="book-meta">第一部 · 2018年首发</div>
+                            <p class="book-desc">主角艾瑞克在一场离奇的车祸后，发现自己能听到物体的“声音”。他逐渐意识到，世界正在衰败，而他必须找到传说中的“造梦师”，在现实崩塌前重建秩序。</p>
+                            <div class="book-tags">
+                                <span class="tag">觉醒</span>
+                                <span class="tag">悬疑</span>
+                                <span class="tag">开端</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Book 2 -->
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <span>Ⅱ</span>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">心渊凝视</h3>
+                            <div class="book-meta">第二部 · 2021年出版</div>
+                            <p class="book-desc">艾瑞克已不再是当年的少年。他深入人类意识的深层结构，面对着古老而不可名状的“它”。在这部作品中，恐怖不再是来自怪物，而是来自内心的深渊。</p>
+                            <div class="book-tags">
+                                <span class="tag">心理惊悚</span>
+                                <span class="tag">成长</span>
+                                <span class="tag">危机</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Book 3 -->
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <span>Ⅲ</span>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">唯心重塑</h3>
+                            <div class="book-meta">第三部 · 即将完结</div>
+                            <p class="book-desc">世界的帷幕已被撕开，两个维度即将融合。艾瑞克必须集结所有“唯心者”，在意识的洪流中寻找唯一的真理，决定人类文明的最终走向。</p>
+                            <div class="book-tags">
+                                <span class="tag">史诗</span>
+                                <span class="tag">终章</span>
+                                <span class="tag">救赎</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lore / World Building -->
+        <section id="lore" class="lore">
+            <div class="container">
+                <h2 class="section-title">世界观设定</h2>
+                <p class="section-subtitle">深入了解支撑故事的核心法则与力量体系</p>
+
+                <div class="lore-container">
+                    <aside class="lore-sidebar">
+                        <ul class="lore-nav">
+                            <li class="active">力量体系：唯心术</li>
+                            <li>核心概念：静默回廊</li>
+                            <li>主要势力：观察者协会</li>
+                            <li>地理环境：破碎之境</li>
+                        </ul>
+                    </aside>
+                    <div class="lore-content">
+                        <h3>力量体系：唯心术</h3>
+                        <p>唯心术并非施法，而是“定义”。在这个世界中，物质是第二性的，意识才是第一性的。唯心者通过集中注意力，强行赋予物质以新的属性。</p>
+                        <p>例如，一名初级唯心者可以“定义”一把普通的铁剑具有“火焰”的属性，从而使其在挥动时产生高温。然而，这种力量极度消耗精神能量，且伴随着巨大的风险——过度使用会导致“精神污染”，最终变成无意识的怪物。</p>
+                        
+                        <div class="lore-stats">
+                            <div class="stat-item">
+                                <span class="stat-num">3</span>
+                                <span class="stat-label">核心层级</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">∞</span>
+                                <span class="stat-label">无限潜能</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">0</span>
+                                <span class="stat-label">绝对防御</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">100%</span>
+                                <span class="stat-label">代价率</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">读者常见问题</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>这三部曲适合什么样的读者？</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>本系列适合喜欢深度心理描写、克苏鲁风格悬疑以及宏大世界观构建的读者。如果你对科幻与哲学的结合感兴趣，将会有很好的阅读体验。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>阅读顺序有要求吗？</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>建议严格按照《梦界回响》、《心渊凝视》、《唯心重塑》的顺序阅读。每一部都是对上一部主题的深化，跳跃阅读可能会影响对剧情连贯性的理解。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>书中有具体的哲学引用吗？</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>是的，书中融入了贝克莱的主观唯心主义、尼采的权力意志以及荣格的心理原型理论，但并未生硬堆砌，而是自然地融入了剧情冲突之中。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">幻梦唯心三部曲</div>
+            <div class="footer-links">
+                <a href="#">关于作者</a>
+                <a href="#">版权声明</a>
+                <a href="#">联系合作</a>
+                <a href="#">读者群</a>
+            </div>
+            <p class="copyright">&copy; 2023 幻梦唯心三部曲版权所有. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close others
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth Scroll for Navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Offset for fixed header
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
