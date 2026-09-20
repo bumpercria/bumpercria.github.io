@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="毛新宇个人简历介绍页面，提供毛新宇的生平简介、成长经历、军事生涯、学术成就及家庭背景等详细信息。">
+    <meta name="keywords" content="毛新宇个人简历介绍, 毛新宇, 军事人物, 毛泽东曾孙, 传记资料">
+    <title>毛新宇个人简历介绍-军事将领与学者生平资料</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #2c3e50;
+            --accent-color: #b71c1c;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+            border: 4px solid var(--bg-color);
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .profile-brief {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-list {
+            text-align: left;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .info-list li {
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            display: inline-block;
+            min-width: 60px;
+        }
+
+        /* Content Area */
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .timeline {
+            border-left: 2px solid #eee;
+            margin-left: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .highlight-box {
+            background-color: #fff8f8;
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        /* Grid for achievements */
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .achievement-item {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .achievement-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Family Section */
+        .family-section {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .family-member {
+            flex: 1;
+            min-width: 200px;
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .family-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            background-color: #eee;
+        }
+
+        .family-name {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .family-role {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ccc;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                position: static;
+                order: -1;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span>◆</span> 简历资料库
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">人物传记</a></li>
+                    <li><a href="#">军事人物</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>毛新宇个人简历介绍</h1>
+        <p>中国人民解放军少将、军事学博士，毛泽东主席曾孙，致力于国防教育和军事理论研究。</p>
+    </section>
+
+    <div class="container">
+        <!-- Sidebar Profile -->
+        <aside>
+            <div class="profile-card">
+                <!-- Placeholder image using picsum with specific seed for consistency -->
+                <img src="https://picsum.photos/seed/maoxin/200/200" alt="毛新宇照片" class="profile-avatar">
+                <h2 class="profile-name">毛新宇</h2>
+                <span class="profile-title">中国人民解放军少将</span>
+                <p class="profile-brief">中国军事科学院战争研究院研究员、博士生导师，曾任中国人民解放军军事科学院军事战略研究部副部长。</p>
+                
+                <ul class="info-list">
+                    <li><span class="info-label">出生日期：</span>1970年1月</li>
+                    <li><span class="info-label">出生地：</span>北京</li>
+                    <li><span class="info-label">学历：</span>博士研究生</li>
+                    <li><span class="info-label">军衔：</span>少将</li>
+                    <li><span class="info-label">研究领域：</span>军事战略、毛泽东军事思想</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Biography Section -->
+            <section>
+                <h2 class="section-title">人物生平</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1970年1月</div>
+                        <div class="timeline-content">
+                            <h3>出生</h3>
+                            <p>出生于北京，是毛泽东与杨开慧的第三子毛岸青与邵华之子。作为毛泽东的曾孙，其出生备受关注。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1982年 - 1988年</div>
+                        <div class="timeline-content">
+                            <h3>求学时期</h3>
+                            <p>就读于北京育民小学，后考入北京四中。1988年考入中国人民解放军国防科学技术大学系统工程系应用数学专业。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">1992年 - 1997年</div>
+                        <div class="timeline-content">
+                            <h3>深造与工作</h3>
+                            <p>1992年加入中国共产党。1997年获得中国人民解放军军事科学院军事战略专业博士学位。毕业后进入军事科学院战略研究部工作。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2009年</div>
+                        <div class="timeline-content">
+                            <h3>晋升少将</h3>
+                            <p>晋升为中国人民解放军少将军衔，成为当时军队中最年轻的少将之一。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2012年 - 2016年</div>
+                        <div class="timeline-content">
+                            <h3>职务变动</h3>
+                            <p>任中国人民解放军军事科学院战略研究部副部长，后担任军事科学院军队政治工作研究院副院长。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Academic Achievements -->
+            <section>
+                <h2 class="section-title">学术成就</h2>
+                <div class="highlight-box">
+                    <p><strong>研究方向：</strong>长期致力于毛泽东军事思想、军事战略理论的研究与传播。其研究成果在学术界具有一定的影响力，注重将传统军事理论与现代战争特点相结合。</p>
+                </div>
+                <div class="achievement-grid" style="margin-top: 2rem;">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🎓</div>
+                        <div class="achievement-title">博士学位</div>
+                        <div class="achievement-desc">获得军事科学院军事战略专业博士学位，师从著名军事战略专家。</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">📚</div>
+                        <div class="achievement-title">著作出版</div>
+                        <div class="achievement-desc">出版多部关于毛泽东军事思想及个人回忆录相关的学术著作。</div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">👨‍🏫</div>
+                        <div class="achievement-title">博士生导师</div>
+                        <div class="achievement-desc">担任军事学博士生导师，指导研究生从事相关领域的学术研究。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Family Background -->
+            <section>
+                <h2 class="section-title">家庭背景</h2>
+                <div class="family-section">
+                    <div class="family-member">
+                        <img src="https://picsum.photos/seed/mao/100/100" alt="毛泽东" class="family-avatar">
+                        <div class="family-name">毛泽东</div>
+                        <div class="family-role">曾祖父</div>
+                    </div>
+                    <div class="family-member">
+                        <img src="https://picsum.photos/seed/shao/100/100" alt="毛岸青" class="family-avatar">
+                        <div class="family-name">毛岸青</div>
+                        <div class="family-role">祖父</div>
+                    </div>
+                    <div class="family-member">
+                        <img src="https://picsum.photos/seed/shao2/100/100" alt="邵华" class="family-avatar">
+                        <div class="family-name">邵华</div>
+                        <div class="family-role">祖母</div>
+                    </div>
+                    <div class="family-member">
+                        <img src="https://picsum.photos/seed/hu/100/100" alt="刘思齐" class="family-avatar">
+                        <div class="family-name">刘思齐</div>
+                        <div class="family-role">继祖母</div>
+                    </div>
+                </div>
+                <p style="margin-top: 1.5rem; color: var(--text-light);">毛新宇的家族背景深厚，他不仅是毛泽东的曾孙，也是家族中重要的历史见证者和文化传承者。他在公开场合多次提及家族对自己的影响，强调传承优良家风的重要性。</p>
+            </section>
+
+            <!-- Public Engagements -->
+            <section>
+                <h2 class="section-title">社会活动</h2>
+                <p>作为军队的高级知识分子，毛新宇积极参与各类社会活动和学术交流。他多次在重要场合发表讲话，阐述新时代国防和军队建设的观点。同时，他也非常注重对青少年的爱国主义教育，经常走进校园与师生互动。</p>
+                <ul style="margin-top: 1rem; list-style-type: disc; padding-left: 1.5rem; color: var(--text-light);">
+                    <li>参加全国“两会”，积极建言献策。</li>
+                    <li>参与国防教育进校园活动。</li>
+                    <li>出席纪念毛泽东诞辰的相关纪念活动。</li>
+                    <li>撰写相关学术论文，探讨信息化战争背景下的战略问题。</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">本站致力于提供准确、客观的人物传记资料与简历信息，仅供学术研究与参考使用。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">人物搜索</a></li>
+                    <li><a href="#">历史人物</a></li>
+                    <li><a href="#">军事人物</a></li>
+                    <li><a href="#">学术专家</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>免责声明</h4>
+                <ul>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">使用条款</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 简历资料库. All Rights Reserved. 本页面内容仅供参考，不作为官方认证依据。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
