@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="濑户准官方资料站，收录濑户准漫画作品全集、作品解析、作者生平、连载状态及相关周边资讯。提供高清阅读、剧情简介与粉丝社区讨论入口。">
+    <meta name="keywords" content="濑户准,濑户准漫画,濑户准作品,濑户准在线阅读,濑户准剧情介绍">
+    <title>濑户准-官方作品资料与在线阅读指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #7f8c8d;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 5px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-cover {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 20px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #1a252f;
+        }
+
+        /* Author Info */
+        .author-profile {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .author-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+        }
+
+        .author-info h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .author-bio {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Ranking List */
+        .ranking-list li {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .rank-num {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            width: 30px;
+            text-align: center;
+        }
+
+        .rank-num.top-3 {
+            color: var(--accent-color);
+        }
+
+        .rank-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .rank-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .author-profile {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span>濑户准</span>资料站
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#works">作品列表</a></li>
+                <li><a href="#ranking">排行榜</a></li>
+                <li><a href="#about">作者简介</a></li>
+            </ul>
+        </nav>
+        <button class="search-btn" aria-label="搜索">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>探索濑户准的漫画世界</h1>
+            <p>这里是濑户准作品的专属聚集地。收录了《地狱老师》、《魔人侦探》等经典作品，提供高清阅读、剧情解析与最新资讯。</p>
+            <div class="hero-tags">
+                <span class="tag">热血战斗</span>
+                <span class="tag">灵异悬疑</span>
+                <span class="tag">校园生活</span>
+                <span class="tag">经典重制</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Author Profile -->
+        <section id="about">
+            <div class="author-profile">
+                <img src="https://picsum.photos/seed/sedohiro/300/300" alt="濑户准头像" class="author-avatar">
+                <div class="author-info">
+                    <h2>濑户准</h2>
+                    <p class="author-bio">日本知名漫画家，以独特的画风和紧凑的叙事节奏著称。擅长将热血元素与校园生活巧妙融合，作品在亚洲拥有极高的人气。其代表作《地狱老师》至今仍被众多读者津津乐道，不仅推动了灵异题材在校园漫画中的发展，更影响了后续无数创作者。</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <strong>30+</strong>
+                            <span>连载作品</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>2000万+</strong>
+                            <span>单行本销量</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>经典</strong>
+                            <span>殿堂级作者</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Works -->
+        <section id="works">
+            <div class="section-title">
+                <h2>精选作品</h2>
+                <a href="#">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-2">
+                <!-- Card 1 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/jigoku/400/300" alt="地狱老师封面" class="card-cover">
+                    <div class="card-body">
+                        <h3 class="card-title">地狱老师</h3>
+                        <div class="card-meta">
+                            <span>1996 - 2002</span>
+                            <span>已完结</span>
+                        </div>
+                        <p class="card-desc">不良少年浦饭幽助意外身亡后，为了复活而接受测试，成为灵界侦探。故事围绕他与妖怪们的战斗以及在学校的生活展开，融合了热血、搞笑与温情元素。</p>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">开始阅读</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/majin/400/300" alt="魔人侦探封面" class="card-cover">
+                    <div class="card-body">
+                        <h3 class="card-title">魔人侦探</h3>
+                        <div class="card-meta">
+                            <span>1997 - 2000</span>
+                            <span>已完结</span>
+                        </div>
+                        <p class="card-desc">讲述了身为魔界之王但在人类世界生活的少年鬼冢，为了寻找魔界宝物而回到人间，与伙伴们一起解决各种超自然案件的冒险故事。</p>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">开始阅读</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Ranking Section -->
+        <section id="ranking">
+            <div class="section-title">
+                <h2>热门榜单</h2>
+                <a href="#">更多榜单 &rarr;</a>
+            </div>
+            <div class="grid-2">
+                <div class="card-body" style="padding: 0;">
+                    <ul class="ranking-list">
+                        <li>
+                            <span class="rank-num top-3">1</span>
+                            <div class="rank-info">
+                                <h4><a href="#">地狱老师</a></h4>
+                                <p>灵异校园题材的巅峰之作</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num top-3">2</span>
+                            <div class="rank-info">
+                                <h4><a href="#">魔人侦探</a></h4>
+                                <p>魔界王子的人间冒险</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num top-3">3</span>
+                            <div class="rank-info">
+                                <h4><a href="#">幽助外传</a></h4>
+                                <p>幽助的过去与起源故事</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <div class="rank-info">
+                                <h4><a href="#">幽游白书</a></h4>
+                                <p>作者前作，经典不朽</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num">5</span>
+                            <div class="rank-info">
+                                <h4><a href="#">灵异教师神木</a></h4>
+                                <p>灵界公务员的日常生活</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card-body" style="padding: 0;">
+                    <ul class="ranking-list">
+                        <li>
+                            <span class="rank-num">6</span>
+                            <div class="rank-info">
+                                <h4><a href="#">不良神</a></h4>
+                                <p>与地狱老师风格相似的作品</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num">7</span>
+                            <div class="rank-info">
+                                <h4><a href="#">猫灵</a></h4>
+                                <p>温馨治愈的猫灵故事</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num">8</span>
+                            <div class="rank-info">
+                                <h4><a href="#">魂狩</a></h4>
+                                <p>暗黑风格的灵异战斗</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num">9</span>
+                            <div class="rank-info">
+                                <h4><a href="#">飞龙传</a></h4>
+                                <p>少年成长的史诗</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="rank-num">10</span>
+                            <div class="rank-info">
+                                <h4><a href="#">幽助外传</a></h4>
+                                <p>幽助的过去与起源故事</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Updates -->
+        <section>
+            <div class="section-title">
+                <h2>最新更新</h2>
+            </div>
+            <div class="grid-4">
+                <article class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">幽助外传：第一章</h4>
+                        <p class="card-desc">浦饭幽助转生前的高中生活，不良少年的日常。</p>
+                        <div class="card-footer">
+                            <span class="tag" style="font-size:0.8rem; background:#eee;">更新于 2小时前</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">魔人侦探：重制版</h4>
+                        <p class="card-desc">鬼冢与魔界伙伴们的最新集结，新篇章开启。</p>
+                        <div class="card-footer">
+                            <span class="tag" style="font-size:0.8rem; background:#eee;">更新于 1天前</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">地狱老师：番外篇</h4>
+                        <p class="card-desc">灵界公务员的神木老师与幽灵们的趣事。</p>
+                        <div class="card-footer">
+                            <span class="tag" style="font-size:0.8rem; background:#eee;">更新于 3天前</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">幽游白书：重制版</h4>
+                        <p class="card-desc">藏马与飞影的羁绊，经典角色的深度解析。</p>
+                        <div class="card-footer">
+                            <span class="tag" style="font-size:0.8rem; background:#eee;">更新于 5天前</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>关于我们</h3>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">
+                    本站致力于为漫画爱好者提供最优质的濑户准作品阅读体验。所有内容仅供学习交流，请支持正版。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>快速导航</h3>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">作品列表</a></li>
+                    <li><a href="#">排行榜</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>作品分类</h3>
+                <ul>
+                    <li><a href="#">热血战斗</a></li>
+                    <li><a href="#">灵异悬疑</a></li>
+                    <li><a href="#">校园日常</a></li>
+                    <li><a href="#">短篇集</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>联系支持</h3>
+                <ul>
+                    <li><a href="#">意见反馈</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 濑户准资料站. All Rights Reserved. 仅供学习交流使用.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+  </html>
