@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>镣铐典狱官 - 硬核模拟经营与生存游戏指南</title>
+    <meta name="description" content="镣铐典狱官官方网站，提供游戏深度攻略、设施建设指南、囚犯管理技巧及MOD下载。探索如何在一个封闭的高墙牢笼中建立秩序，平衡生存与控制。">
+    <meta name="keywords" content="镣铐典狱官, 模拟经营, 狱政管理, 建设游戏, 狱友攻略, 狱政管理模拟器">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #1a1a1d;
+            --card-bg: #2d2d30;
+            --accent-color: #d4af37; /* Gold for prison bars */
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --danger: #c0392b;
+            --success: #27ae60;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #000;
+            border-bottom: 2px solid var(--accent-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--accent-color);
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .cta-btn:hover {
+            background-color: #b5952f;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                        url('https://picsum.photos/seed/prisonwall/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            border: 1px solid var(--accent-color);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text-muted);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.1s, opacity 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 60px 0;
+            background-color: var(--bg-color);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-top-color: var(--accent-color);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Gameplay Section */
+        .gameplay {
+            padding: 60px 0;
+            background-color: #252528;
+        }
+
+        .gameplay-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .gameplay-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .gameplay-text p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        .gameplay-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .gameplay-list li::before {
+            content: '►';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 0.8rem;
+        }
+
+        .gameplay-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            border: 1px solid #444;
+        }
+
+        /* Management Tips */
+        .tips {
+            padding: 60px 0;
+            background-color: var(--bg-color);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .tip-item {
+            background: linear-gradient(145deg, #2d2d30, #252528);
+            padding: 20px;
+            border-left: 4px solid var(--danger);
+        }
+
+        .tip-item.success {
+            border-left-color: var(--success);
+        }
+
+        .tip-item h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .tip-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 60px 0;
+            background-color: #252528;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background-color: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            list-style: none;
+            position: relative;
+            padding-right: 40px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-content {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            border-top: 1px solid #3d3d3d;
+            padding-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .gameplay-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo"><span>PRISON</span> 镣铐典狱官</a>
+            <nav>
+                <ul>
+                    <li><a href="#gameplay">游戏特色</a></li>
+                    <li><a href="#management">狱政管理</a></li>
+                    <li><a href="#tips">生存指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">立即建设</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>镣铐典狱官</h1>
+                <p>在封闭的高墙内建立秩序。平衡资源、管理囚犯、应对突发事件。你能成为一名优秀的典狱长吗？</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">开始游戏</button>
+                    <button class="btn btn-secondary">查看模组</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features" id="gameplay">
+            <div class="container">
+                <h2 class="section-title">核心特色</h2>
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-icon">⛓️</div>
+                        <h3>严密的安保系统</h3>
+                        <p>部署巡逻守卫、设置金属探测器和高压电网。你需要规划巡逻路线，防止越狱事件发生，确保监狱的安全稳定。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">🛠️</div>
+                        <h3>设施建设</h3>
+                        <p>从单人牢房到特制隔离室，从食堂到医务室。根据囚犯类型合理分配空间，提升生活质量以降低暴乱风险。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">📊</div>
+                        <h3>资源管理</h3>
+                        <p>监控电力、水源和食物供应。处理预算赤字，平衡囚犯的基本人权与你的管理成本，维持经济运转。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gameplay Detail -->
+        <section class="gameplay" id="management">
+            <div class="container">
+                <div class="gameplay-layout">
+                    <div class="gameplay-text">
+                        <h2>沉浸式狱政体验</h2>
+                        <p>作为新的典狱长，你将接手一座设施陈旧的监狱。面对形形色色的囚犯——从惯犯到高智商罪犯，你需要制定不同的管理策略。</p>
+                        <p>游戏采用了独特的“监狱管理”视角，你需要关注囚犯的饥饿度、心情、健康和治安状况。任何一项指标失控，都可能导致骚乱甚至全武行。</p>
+                        <ul class="gameplay-list">
+                            <li><strong>实时模拟：</strong> 从清晨到深夜，一切都在实时发生。</li>
+                            <li><strong>动态事件：</strong> 处理暴乱、越狱企图、医疗急救和囚犯谈判。</li>
+                            <li><strong>深度策略：</strong> 合理分配工作，让囚犯通过劳动弥补过失。</li>
+                        </ul>
+                    </div>
+                    <img src="https://picsum.photos/seed/cells/600/400.jpg" alt="监狱内部设施示意图" class="gameplay-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Survival Tips -->
+        <section class="tips" id="tips">
+            <div class="container">
+                <h2 class="section-title">生存指南</h2>
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <h4>⚠️ 避免过度拥挤</h4>
+                        <p>过多的囚犯会导致卫生条件恶化，引发疾病传播。保持合理的床位配比是基础。</p>
+                    </div>
+                    <div class="tip-item success">
+                        <h4>✅ 建立健身房</h4>
+                        <p>安排囚犯在健身房锻炼可以消耗多余精力，降低攻击性，是降低暴乱率的有效手段。</p>
+                    </div>
+                    <div class="tip-item">
+                        <h4>🔥 隔离危险分子</h4>
+                        <p>对于有暴力倾向或试图策划越狱的囚犯，尽早将其转移至特制隔离室，防止其煽动他人。</p>
+                    </div>
+                    <div class="tip-item success">
+                        <h4>🍽️ 定时供应食物</h4>
+                        <p>饥饿会直接导致囚犯心情下降。建立高效的送餐系统，确保所有牢房都能按时获得食物。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                
+                <details>
+                    <summary>游戏支持多人联机吗？</summary>
+                    <div class="faq-content">
+                        目前《镣铐典狱官》主要以单人模拟经营模式为主。开发团队计划在未来版本中增加合作与竞争模式，请关注官方更新日志。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>如何修复监狱的电力系统？</summary>
+                    <div class="faq-content">
+                        电力故障通常由超负荷或设备老化引起。请前往控制面板查看故障源，派遣维修工进行修理，并考虑扩建发电站或升级变压器。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>囚犯逃跑后如何追捕？</summary>
+                    <div class="faq-content">
+                        逃跑后，你需要立即调动巡逻守卫封锁出口。一旦发现逃犯，守卫将自动进行追捕。如果逃犯未被及时抓获，可能会导致治安评分下降。
+                    </div>
+                </details>
+
+                <details>
+                    <summary>游戏是否包含血腥暴力内容？</summary>
+                    <div class="faq-content">
+                        游戏采用卡通风格渲染，旨在模拟管理压力而非展示血腥细节。虽然包含冲突和暴力元素，但整体视觉风格相对克制，适合大多数玩家。
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于游戏</h4>
+                    <p style="color: #888; font-size: 0.9rem;">
+                        《镣铐典狱官》是一款深度模拟监狱管理策略游戏。在这里，每一个决定都关乎秩序与混乱的平衡。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">更新日志</a></li>
+                        <li><a href="#">社区论坛</a></li>
+                        <li><a href="#">开发者支持</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律信息</h4>
+                    <ul>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">未成年保护</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 镣铐典狱官官方站. All rights reserved. 本站内容仅供游戏攻略与资讯参考。
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
