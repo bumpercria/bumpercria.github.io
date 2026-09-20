@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台湾佬娱乐中文-精品台式影视内容与在线观看指南</title>
+    <meta name="description" content="台湾佬娱乐中文提供最新、最热的台湾影视娱乐资讯与在线观看服务。收录台剧、综艺、电影等高清内容，为您打造沉浸式的台式娱乐体验。">
+    <meta name="keywords" content="台湾佬娱乐中文,台湾影视,台剧推荐,综艺在线,台式娱乐">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946; /* 活力红，符合娱乐调性 */
+            --secondary-color: #1d3557; /* 深蓝，用于文字和导航 */
+            --bg-color: #f1faee; /* 浅灰白背景 */
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #f1f1f1;
+            border-radius: 20px;
+            padding: 4px 12px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 4px;
+            font-size: 14px;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--secondary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #457b9d 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .hero-tags span {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin: 0 4px;
+            font-size: 0.9rem;
+        }
+
+        /* 分类导航 */
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .cat-btn {
+            background: var(--card-bg);
+            border: 1px solid #eee;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .cat-btn:hover, .cat-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* 热门剧集卡片 */
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .card-body {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: #f1faee;
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: auto;
+        }
+
+        .card-btn {
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .card-btn:hover {
+            background: var(--primary-color);
+        }
+
+        /* 最新更新列表 */
+        .update-list {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .update-item {
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-md);
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .update-item:last-child {
+            border-bottom: none;
+        }
+
+        .update-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .update-num {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #ddd;
+            width: 40px;
+            text-align: center;
+        }
+
+        .update-item.new .update-num {
+            color: var(--primary-color);
+        }
+
+        .update-info {
+            flex: 1;
+        }
+
+        .update-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .update-ep {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .update-time {
+            font-size: 0.85rem;
+            color: #999;
+            white-space: nowrap;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: var(--spacing-md) 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* 页脚 */
+        footer {
+            background: var(--secondary-color);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: white;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 10px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-layout {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-md);
+            }
+
+            .update-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .update-time {
+                align-self: flex-end;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">台湾佬<span>娱乐中文</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">台剧精选</a></li>
+                    <li><a href="#">综艺娱乐</a></li>
+                    <li><a href="#">电影专区</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索剧集...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Banner -->
+        <section class="hero">
+            <h1>探索台湾娱乐魅力</h1>
+            <p>汇聚台剧、综艺与电影，为您提供最纯正的台式娱乐体验。高清画质，流畅播放，随时畅享精彩。</p>
+            <div class="hero-tags">
+                <span>#热门台剧</span>
+                <span>#综艺直播</span>
+                <span>#经典电影</span>
+                <span>#高清在线</span>
+            </div>
+        </section>
+
+        <!-- 分类导航 -->
+        <section class="category-nav">
+            <button class="cat-btn active">全部</button>
+            <button class="cat-btn">爱情偶像</button>
+            <button class="cat-btn">悬疑推理</button>
+            <button class="cat-btn">职场商战</button>
+            <button class="cat-btn">搞笑综艺</button>
+            <button class="cat-btn">怀旧经典</button>
+        </section>
+
+        <!-- 热门推荐 Grid -->
+        <section>
+            <h2 class="section-title">本周热门推荐</h2>
+            <div class="grid-layout">
+                <!-- Card 1 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/taiwan1/300/400" alt="台剧封面" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">热播中</span>
+                        <h3 class="card-title">追光者：爱的轨迹</h3>
+                        <div class="card-meta">2023 · 爱情 / 悬疑 · 更新至12集</div>
+                        <a href="#" class="card-btn">立即观看</a>
+                    </div>
+                </article>
+                <!-- Card 2 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/taiwan2/300/400" alt="综艺封面" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">综艺</span>
+                        <h3 class="card-title">星光大道：全能挑战</h3>
+                        <div class="card-meta">真人秀 · 每日更新 · 全明星阵容</div>
+                        <a href="#" class="card-btn">立即观看</a>
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/taiwan3/300/400" alt="电影封面" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">高分电影</span>
+                        <h3 class="card-title">海边的咖啡馆</h3>
+                        <div class="card-meta">剧情 / 爱情 · 1080P高清</div>
+                        <a href="#" class="card-btn">立即观看</a>
+                    </div>
+                </article>
+                <!-- Card 4 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/taiwan4/300/400" alt="剧集封面" class="card-img">
+                    <div class="card-body">
+                        <span class="card-tag">台剧</span>
+                        <h3 class="card-title">深夜食堂：台北版</h3>
+                        <div class="card-meta">美食 / 剧情 · 温馨治愈系</div>
+                        <a href="#" class="card-btn">立即观看</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 最新更新列表 -->
+        <section>
+            <h2 class="section-title">最新更新动态</h2>
+            <div class="update-list">
+                <div class="update-item new">
+                    <div class="update-num">1</div>
+                    <div class="update-info">
+                        <div class="update-title">逆局：真相大白</div>
+                        <div class="update-ep">更新至第24集 - 终章</div>
+                    </div>
+                    <div class="update-time">10分钟前</div>
+                </div>
+                <div class="update-item new">
+                    <div class="update-num">2</div>
+                    <div class="update-info">
+                        <div class="update-title">华灯初上：夜生活</div>
+                        <div class="update-ep">更新至第8集 - 情感纠葛</div>
+                    </div>
+                    <div class="update-time">2小时前</div>
+                </div>
+                <div class="update-item">
+                    <div class="update-num">3</div>
+                    <div class="update-info">
+                        <div class="update-title">斯卡罗：历史回响</div>
+                        <div class="update-ep">更新至第5集 - 历史重演</div>
+                    </div>
+                    <div class="update-time">5小时前</div>
+                </div>
+                <div class="update-item">
+                    <div class="update-num">4</div>
+                    <div class="update-info">
+                        <div class="update-title">我们与恶的距离</div>
+                        <div class="update-ep">经典重播 - 社会议题</div>
+                    </div>
+                    <div class="update-time">1天前</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section class="faq-section">
+            <h2 class="section-title">常见问题解答</h2>
+            <div class="faq-item active" onclick="toggleFaq(this)">
+                <div class="faq-question">如何开始观看？ <span>▼</span></div>
+                <div class="faq-answer">点击任意剧集卡片上的“立即观看”按钮，即可进入播放页面。支持多种设备终端直接播放。</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">更新频率是怎样的？ <span>▼</span></div>
+                <div class="faq-answer">我们与台湾本土版权方保持同步，确保最新剧集第一时间上线。具体更新时间请关注各剧集详情页。</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">是否需要注册会员？ <span>▼</span></div>
+                <div class="faq-answer">大部分基础内容均可免费观看。部分独家高清内容或VIP专区需要开通会员权益。</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">版权声明</a>
+                <a href="#">联系方式</a>
+                <a href="#">隐私政策</a>
+            </div>
+            <p>&copy; 2023 台湾佬娱乐中文 版权所有</p>
+            <p>本站仅提供资源索引服务，所有内容均来自互联网，仅供学习交流使用。</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 切换交互
+        function toggleFaq(element) {
+            const parent = element.parentElement;
+            // 关闭其他打开的项
+            const allItems = parent.querySelectorAll('.faq-item');
+            allItems.forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('active');
+                }
+            });
+            // 切换当前项
+            element.classList.toggle('active');
+        }
+
+        // 简单的分类按钮交互
+        const catBtns = document.querySelectorAll('.cat-btn');
+        catBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                catBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
