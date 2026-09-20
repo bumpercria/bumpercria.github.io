@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="冒险迷宫村转职攻略大全，提供职业选择建议、技能加点推荐、迷宫探索技巧及新手入门指南。">
+    <meta name="keywords" content="冒险迷宫村 转职, 冒险迷宫村职业, 冒险迷宫村攻略, 冒险迷宫村技能">
+    <title>冒险迷宫村-转职攻略与职业养成指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5d4037;
+            --accent-color: #d84315;
+            --bg-color: #f3e5f5;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #3e2723);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #ffcc80;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, #fff3e0, #ffe0b2);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(216, 67, 21, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(216, 67, 21, 0.4);
+            background-color: #bf360c;
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        /* Job Cards */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .job-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            border-color: var(--accent-color);
+        }
+
+        .job-img-placeholder {
+            width: 100%;
+            height: 160px;
+            background-color: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .job-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .job-card:hover .job-img-placeholder img {
+            transform: scale(1.05);
+        }
+
+        .job-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .job-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .job-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .job-stats {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #666;
+        }
+
+        .stat-icon {
+            color: var(--accent-color);
+        }
+
+        .job-action {
+            margin-top: auto;
+        }
+
+        .btn-link {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            color: var(--primary-color);
+        }
+
+        .step-list {
+            list-style: none;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .step-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .tip-box {
+            background-color: #fff3e0;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #5d4037;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3e2723;
+            color: rgba(255,255,255,0.7);
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 10px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span>⚔️</span> 冒险迷宫村
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">转职攻略</a></li>
+                    <li><a href="#">职业图鉴</a></li>
+                    <li><a href="#">迷宫秘籍</a></li>
+                    <li><a href="#">新手指南</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>开启你的转职之路</h1>
+            <p>在冒险迷宫村中，合理的职业规划是通关的关键。从剑士到贤者，从猎人到炼金术士，选择最适合你的道路，打造最强村庄。</p>
+            <a href="#guide" class="cta-button">查看转职流程</a>
+        </section>
+
+        <div class="main-grid">
+            <!-- Main Content -->
+            <div class="content-area">
+                
+                <!-- Guide Section -->
+                <section id="guide">
+                    <div class="section-header">
+                        <h2 class="section-title">转职流程详解</h2>
+                    </div>
+                    <div class="tip-box">
+                        <strong>提示：</strong> 转职需要消耗对应的职业卡或达到一定等级，并且需要完成前置任务。建议优先提升村庄等级以解锁高级职业。
+                    </div>
+                    <ul class="step-list">
+                        <li><strong>达到要求：</strong> 确保角色达到转职所需的最低等级（通常为15级或20级）。</li>
+                        <li><strong>收集材料：</strong> 根据目标职业要求，准备特定的转职道具（如职业卡、稀有矿石）。</li>
+                        <li><strong>前往祭坛：</strong> 前往村庄中心或特定的职业祭坛，与相关NPC对话。</li>
+                        <li><strong>完成试炼：</strong> 通过简单的试炼或小游戏，证明你的能力。</li>
+                        <li><strong>正式转职：</strong> 确认信息后，即可获得新职业称号及初始技能。</li>
+                    </ul>
+                </section>
+
+                <!-- Jobs Overview -->
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">热门职业推荐</h2>
+                    </div>
+                    <div class="job-grid">
+                        <!-- Job 1 -->
+                        <article class="job-card">
+                            <div class="job-img-placeholder">
+                                <img src="https://picsum.photos/seed/swordsman/400/250" alt="剑士">
+                                <span class="job-badge">物理输出</span>
+                            </div>
+                            <div class="job-content">
+                                <h3 class="job-title">剑士</h3>
+                                <p class="job-desc">近战物理输出核心，拥有高生命值和物理防御力，是新手最推荐的开局职业。</p>
+                                <div class="job-stats">
+                                    <span class="stat-item"><span class="stat-icon">❤️</span>高血量</span>
+                                    <span class="stat-item"><span class="stat-icon">⚔️</span>高防御</span>
+                                </div>
+                                <div class="job-action">
+                                    <a href="#" class="btn-link">查看详情 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Job 2 -->
+                        <article class="job-card">
+                            <div class="job-img-placeholder">
+                                <img src="https://picsum.photos/seed/mage/400/250" alt="贤者">
+                                <span class="job-badge">魔法输出</span>
+                            </div>
+                            <div class="job-content">
+                                <h3 class="job-title">贤者</h3>
+                                <p class="job-desc">掌握元素魔法的专家，擅长范围攻击和控制，是应对大量敌人时的利器。</p>
+                                <div class="job-stats">
+                                    <span class="stat-item"><span class="stat-icon">🔥</span>范围伤害</span>
+                                    <span class="stat-item"><span class="stat-icon">🛡️</span>护盾</span>
+                                </div>
+                                <div class="job-action">
+                                    <a href="#" class="btn-link">查看详情 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Job 3 -->
+                        <article class="job-card">
+                            <div class="job-img-placeholder">
+                                <img src="https://picsum.photos/seed/hunter/400/250" alt="猎人">
+                                <span class="job-badge">远程/辅助</span>
+                            </div>
+                            <div class="job-content">
+                                <h3 class="job-title">猎人</h3>
+                                <p class="job-desc">擅长使用弓箭进行远程攻击，拥有极高的暴击率和敏捷属性。</p>
+                                <div class="job-stats">
+                                    <span class="stat-item"><span class="stat-icon">🏹</span>远程</span>
+                                    <span class="stat-item"><span class="stat-icon">⚡</span>高暴击</span>
+                                </div>
+                                <div class="job-action">
+                                    <a href="#" class="btn-link">查看详情 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Job 4 -->
+                        <article class="job-card">
+                            <div class="job-img-placeholder">
+                                <img src="https://picsum.photos/seed/merchant/400/250" alt="商人">
+                                <span class="job-badge">经济/辅助</span>
+                            </div>
+                            <div class="job-content">
+                                <h3 class="job-title">商人</h3>
+                                <p class="job-desc">精通贸易与交易，能够降低商店物价并增加村庄收益，是经济系统的关键。</p>
+                                <div class="job-stats">
+                                    <span class="stat-item"><span class="stat-icon">💰</span>低物价</span>
+                                    <span class="stat-item"><span class="stat-icon">📈</span>高收益</span>
+                                </div>
+                                <div class="job-action">
+                                    <a href="#" class="btn-link">查看详情 &rarr;</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Comparison Table -->
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">职业属性对比</h2>
+                    </div>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>职业</th>
+                                <th>攻击类型</th>
+                                <th>主要技能</th>
+                                <th>推荐场景</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>剑士</strong></td>
+                                <td>物理近战</td>
+                                <td>防御姿态、突刺</td>
+                                <td>前排抗伤、新手过渡</td>
+                            </tr>
+                            <tr>
+                                <td><strong>贤者</strong></td>
+                                <td>魔法远程</td>
+                                <td>陨石术、冰冻</td>
+                                <td>BOSS战、群体清理</td>
+                            </tr>
+                            <tr>
+                                <td><strong>猎人</strong></td>
+                                <td>物理远程</td>
+                                <td>多重箭、陷阱</td>
+                                <td>速刷、单人探险</td>
+                            </tr>
+                            <tr>
+                                <td><strong>炼金术士</strong></td>
+                                <td>辅助/控制</td>
+                                <td>毒云、药剂强化</td>
+                                <td>特殊迷宫、生存挑战</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                
+                <!-- Quick Tips -->
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">转职小贴士</h3>
+                    <ul class="step-list">
+                        <li>不要过早转职，保留初始技能点。</li>
+                        <li>观察迷宫敌人的弱点选择职业。</li>
+                        <li>某些职业需要特定道具才能解锁。</li>
+                        <li>转职后可随时重置职业（消耗金币）。</li>
+                    </ul>
+                </div>
+
+                <!-- FAQ Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-title">常见问题 (FAQ)</h3>
+                    <div style="font-size: 0.9rem;">
+                        <p style="margin-bottom: 10px;"><strong>Q: 转职后等级会重置吗？</strong></p>
+                        <p style="margin-bottom: 20px; color: #666;">A: 不会。转职只改变职业属性和技能，角色等级和经验值完全保留。</p>
+                        
+                        <p style="margin-bottom: 10px;"><strong>Q: 最多可以转职几次？</strong></p>
+                        <p style="margin-bottom: 20px; color: #666;">A: 目前游戏设定中，每个角色有两次转职机会（例如：剑士 -> 圣骑士 -> 圣骑士王）。</p>
+                        
+                        <p style="margin-bottom: 10px;"><strong>Q: 哪个职业最强？</strong></p>
+                        <p style="color: #666;">A: 没有绝对的最强，只有最适合。根据你的游戏风格和队伍配置选择。</p>
+                    </div>
+                </div>
+
+                <!-- Download/Link Widget -->
+                <div class="sidebar-widget" style="background-color: #e8eaf6; border: 1px solid #c5cae9;">
+                    <h3 class="sidebar-title">需要帮助？</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 10px; color: #333;">遇到转职难题？查看官方论坛或加入玩家社区交流。</p>
+                    <a href="#" class="cta-button" style="background-color: #3f51b5; font-size: 0.9rem; padding: 8px 20px;">访问社区</a>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">联系方式</a>
+                <a href="#">隐私政策</a>
+            </div>
+            <p>&copy; 2023 冒险迷宫村攻略站. All Rights Reserved. 本站为非官方粉丝站，仅供学习交流使用。</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
