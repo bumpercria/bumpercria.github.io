@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虐兔-黑暗童话与极端情感题材专题站</title>
+    <meta name="description" content="虐兔专题站提供深度的黑暗童话解析、极端情感文学推荐及相关的心理探讨与阅读指南。本站专注于非主流的叙事风格与情感体验，旨在为寻求独特阅读体验的用户提供资源与建议。">
+    <meta name="keywords" content="虐兔,黑暗童话,情感文学,极端叙事,心理探索">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --card-bg: #141418;
+            --text-primary: #e0e0e0;
+            --text-secondary: #888899;
+            --accent-red: #8a2be2;
+            --accent-dark: #2b003b;
+            --border-color: #2a2a35;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-red);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(10, 10, 12, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+        }
+
+        .logo span {
+            color: var(--accent-red);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a0b2e 0%, var(--bg-color) 70%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--accent-red);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-left: 3px solid var(--accent-red);
+            padding-left: 15px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .section-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #222;
+            object-fit: cover;
+            filter: grayscale(30%) contrast(110%);
+            transition: filter 0.3s;
+        }
+
+        .card:hover .card-img {
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #666;
+            padding-top: 15px;
+            border-top: 1px solid #2a2a35;
+        }
+
+        /* List Style */
+        .list-item {
+            display: flex;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            padding: 20px;
+            align-items: center;
+        }
+
+        .list-num {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2a2a35;
+            margin-right: 20px;
+            line-height: 1;
+        }
+
+        .list-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .list-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Analysis / Text Block */
+        .analysis-block {
+            background: #111116;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .analysis-block h2 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .analysis-block p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        .analysis-block ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .analysis-block li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            margin-top: 60px;
+            background: #050506;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .disclaimer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #1a1a1f;
+            font-size: 0.8rem;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">Dark<span>Fable</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#stories">深度解析</a></li>
+                    <li><a href="#themes">核心主题</a></li>
+                    <li><a href="#community">读者社区</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索黑暗叙事中的情感边界</h1>
+                <p>“虐兔”并非单纯的猎奇，而是一种关于脆弱、挣扎与绝望的心理探索。我们致力于收录并解析这一特殊题材下的文学与视觉作品。</p>
+                <a href="#stories" class="cta-btn">开始阅读</a>
+            </div>
+        </section>
+
+        <!-- Intro Analysis -->
+        <section class="container">
+            <div class="analysis-block">
+                <h2>什么是“虐兔”？</h2>
+                <p>在特定的亚文化语境与网络文学分类中，“虐兔”通常指代以兔子（或类似拟人化、脆弱形象）为主角，描述其在极端环境、反派压迫或命运捉弄下遭受苦难、情感折磨的叙事内容。</p>
+                <p>这类题材的核心往往不在于猎取感官刺激，而在于刻画<strong>绝对的弱势与无助</strong>。读者通过共情角色的痛苦，体验一种特殊的心理宣泄或对人性阴暗面的审视。</p>
+                <ul>
+                    <li><strong>核心特征：</strong> 强调角色的脆弱性、情境的绝望感以及情感上的拉扯。</li>
+                    <li><strong>常见形式：</strong> 漫画、同人小说、视觉小说及特定风格的插画。</li>
+                    <li><strong>受众心理：</strong> 寻求共鸣、探索心理极限或享受极致的情感张力。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Featured Stories / Grid -->
+        <section id="stories">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">精选深度解析</h2>
+                    <span class="section-desc">精选具有代表性的作品与案例分析</span>
+                </div>
+                
+                <div class="grid">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/dark1/400/250" alt="作品封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">叙事分析</span>
+                            <h3 class="card-title">从“受难”到“救赎”：情感张力的构建</h3>
+                            <p class="card-excerpt">深入探讨作品中如何通过层层递进的困境，逐步释放角色的心理防线，从而引发读者的强烈共鸣。</p>
+                            <div class="card-meta">
+                                <span>阅读时间: 5分钟</span>
+                                <a href="#">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/dark2/400/250" alt="作品封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">角色心理</span>
+                            <h3 class="card-title">脆弱形象下的心理博弈</h3>
+                            <p class="card-excerpt">分析弱势角色在逆境中如何通过微小的心理变化来应对压迫，这种反差感是题材魅力的关键。</p>
+                            <div class="card-meta">
+                                <span>阅读时间: 8分钟</span>
+                                <a href="#">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/dark3/400/250" alt="作品封面" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">创作技巧</span>
+                            <h3 class="card-title">如何安全地驾驭沉重题材</h3>
+                            <p class="card-excerpt">对于创作者而言，如何在保持叙事张力的同时避免过度渲染暴力与负面情绪，是一门艺术。</p>
+                            <div class="card-meta">
+                                <span>阅读时间: 6分钟</span>
+                                <a href="#">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Themes List -->
+        <section id="themes" style="background-color: #0e0e10;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见主题与分类</h2>
+                    <span class="section-desc">了解这一题材下的不同侧重点</span>
+                </div>
+
+                <div class="list-container">
+                    <div class="list-item">
+                        <span class="list-num">01</span>
+                        <div class="list-content">
+                            <h3>命运的无常与无力感</h3>
+                            <p>侧重于描写主角无法改变既定悲剧命运的无力感，强调宿命论的色彩。</p>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <span class="list-num">02</span>
+                        <div class="list-content">
+                            <h3>极端环境的生存挑战</h3>
+                            <p>在极端恶劣、封闭或充满敌意的环境中，角色如何挣扎求生。</p>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <span class="list-num">03</span>
+                        <div class="list-content">
+                            <h3>情感的操控与利用</h3>
+                            <p>涉及复杂的心理操控、背叛与利用，展现人际关系的阴暗面。</p>
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <span class="list-num">04</span>
+                        <div class="list-content">
+                            <h3>自我牺牲与救赎</h3>
+                            <p>在绝望中寻找一丝光亮，通过自我牺牲或精神救赎来达成叙事闭环。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community / Guide Section -->
+        <section id="community" class="container">
+            <div class="section-header">
+                <h2 class="section-title">读者指南与社区规范</h2>
+                <span class="section-desc">文明阅读，理性讨论</span>
+            </div>
+            
+            <div class="grid">
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">阅读建议</h3>
+                        <p class="card-excerpt">本站内容包含强烈的情感冲突与心理描写。建议读者在心情平和时阅读，避免在驾驶或操作机械时浏览。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">内容分级</h3>
+                        <p class="card-excerpt">部分作品涉及心理压迫描写，我们已对内容进行分级标识。未成年人请在监护人指导下阅读。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">投稿与交流</h3>
+                        <p class="card-excerpt">欢迎分享您的解析文章或创作心得。请遵守社区公约，尊重所有创作者的劳动成果。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>DarkFable</h4>
+                    <p>专注于黑暗叙事与心理题材的深度探索平台。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li><a href="#">心理学基础</a></li>
+                        <li><a href="#">文学理论</a></li>
+                        <li><a href="#">创作工坊</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>本站所有内容仅供学习交流与艺术探讨使用。内容版权归原作者所有。本站不存储任何实际文件，仅提供索引与解析服务。</p>
+                <p>&copy; 2023 DarkFable Theme Site. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
