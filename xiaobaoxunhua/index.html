@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="小宝寻花视频播放 - 在线观看小宝寻花高清完整版，提供流畅的影视资源播放体验，支持多种设备访问。">
+    <meta name="keywords" content="小宝寻花视频播放,小宝寻花在线观看,小宝寻花全集,小宝寻花高清">
+    <title>小宝寻花视频播放-高清影视资源在线观看平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914;
+            --primary-hover: #b20710;
+            --bg-color: #141414;
+            --card-bg: #1f1f1f;
+            --text-main: #ffffff;
+            --text-secondary: #b3b3b3;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 8px 12px;
+            color: #fff;
+            outline: none;
+            width: 200px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            border: none;
+            color: #fff;
+            padding: 0 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-color)), url('https://picsum.photos/seed/flower/1920/1080') no-repeat center center/cover;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        /* Main Content */
+        main {
+            padding-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .section-title a:hover {
+            color: var(--text-main);
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .thumbnail {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255,255,255,0.8);
+            transition: background 0.3s;
+        }
+
+        .video-card:hover .play-icon {
+            background: var(--primary-color);
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .quality-tag {
+            background-color: #2ecc71;
+            color: #000;
+            padding: 2px 6px;
+            border-radius: 2px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        /* Player Section */
+        .player-section {
+            margin-top: 2rem;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .player-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .player-placeholder iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-details {
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-top: 1px solid #333;
+        }
+
+        .video-details h2 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .tags {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #333;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Info Section */
+        .info-section {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .intro-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-text h3 {
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .sidebar-list {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .sidebar-list h4 {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-list a {
+            display: block;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .sidebar-list a:hover {
+            background-color: #333;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 3rem 0;
+            border-top: 1px solid #333;
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .info-section {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+            
+            .search-box {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+                <span>影视库</span>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">热门推荐</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">分类浏览</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-box">
+                <input type="text" placeholder="搜索小宝寻花...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>小宝寻花视频播放</h1>
+                <p>探索精彩内容，高清流畅播放体验。即刻开启您的视觉盛宴。</p>
+                <div>
+                    <a href="#player" class="btn btn-primary">立即播放</a>
+                    <a href="#list" class="btn btn-secondary">观看列表</a>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <!-- Player Section -->
+            <section id="player" class="player-section">
+                <div class="player-placeholder">
+                    <!-- 模拟视频播放器容器 -->
+                    <div style="z-index: 1; text-align: center;">
+                        <p style="margin-bottom: 10px;">当前播放：小宝寻花 - 完整版</p>
+                        <button class="btn btn-primary" onclick="alert('视频播放器接口已就绪，准备加载流媒体资源。')">开始播放视频</button>
+                    </div>
+                </div>
+                <div class="video-details">
+                    <h2>小宝寻花：精彩片段回顾</h2>
+                    <p style="color: #ccc; margin-bottom: 15px;">本视频资源经过整理，提供高清流畅的观看体验。支持多种设备访问，随时随地畅享娱乐。</p>
+                    <div class="tags">
+                        <span class="tag">HD高清</span>
+                        <span class="tag">免费观看</span>
+                        <span class="tag">无广告</span>
+                        <span class="tag">流畅播放</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video List Section -->
+            <section id="list" style="margin-top: 3rem;">
+                <div class="section-title">
+                    <span>最新推荐</span>
+                    <a href="#">查看更多 ></a>
+                </div>
+                <div class="video-grid">
+                    <!-- Video Card 1 -->
+                    <article class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://picsum.photos/seed/flower1/400/225" alt="小宝寻花 第一集">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">小宝寻花 第一集：初入花海</h3>
+                            <div class="card-meta">
+                                <span>2023-10-24</span>
+                                <span class="quality-tag">HD</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 2 -->
+                    <article class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://picsum.photos/seed/flower2/400/225" alt="小宝寻花 第二集">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">小宝寻花 第二集：神秘邂逅</h3>
+                            <div class="card-meta">
+                                <span>2023-10-25</span>
+                                <span class="quality-tag">HD</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 3 -->
+                    <article class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://picsum.photos/seed/flower3/400/225" alt="小宝寻花 第三集">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">小宝寻花 第三集：探寻真相</h3>
+                            <div class="card-meta">
+                                <span>2023-10-26</span>
+                                <span class="quality-tag">HD</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 4 -->
+                    <article class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://picsum.photos/seed/flower4/400/225" alt="小宝寻花 第四集">
+                            <div class="play-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">小宝寻花 第四集：高潮迭起</h3>
+                            <div class="card-meta">
+                                <span>2023-10-27</span>
+                                <span class="quality-tag">HD</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Info Section -->
+            <section class="info-section">
+                <div class="content-area">
+                    <div class="section-title">关于小宝寻花</div>
+                    <div class="intro-text">
+                        <h3>内容简介</h3>
+                        <p>“小宝寻花”系列视频作品以其独特的叙事风格和生动的画面表现力，吸引了大量观众的喜爱。本系列主要讲述了主角小宝在探索自然美景与未知世界过程中的冒险故事。通过高清的画质和精心编排的剧情，为观众呈现了一场视觉与心灵的双重盛宴。</p>
+                        
+                        <h3>观看指南</h3>
+                        <p>如果您正在寻找“小宝寻花视频播放”的资源，本站提供了最新的剧集更新。用户可以通过点击视频卡片进入播放页面，支持在线播放和下载功能（视版权政策而定）。建议在稳定的网络环境下观看以获得最佳体验。</p>
+                        
+                        <h3>常见问题</h3>
+                        <p><strong>Q: 如何播放视频？</strong><br>A: 点击页面中的视频卡片或播放按钮即可开始加载视频资源。</p>
+                        <p><strong>Q: 是否支持移动端观看？</strong><br>A: 本站支持PC端及移动端自适应浏览，您可以在手机或平板上流畅观看。</p>
+                    </div>
+                </div>
+
+                <aside>
+                    <div class="sidebar-list">
+                        <h4>热门分类</h4>
+                        <ul>
+                            <li><a href="#">冒险类</a></li>
+                            <li><a href="#">自然风光</a></li>
+                            <li><a href="#">纪录片</a></li>
+                            <li><a href="#">动画短片</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-list" style="margin-top: 20px;">
+                        <h4>近期热门</h4>
+                        <ul>
+                            <li><a href="#">自然之美</a></li>
+                            <li><a href="#">小宝系列</a></li>
+                            <li><a href="#">高清精选</a></li>
+                            <li><a href="#">周末推荐</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">版权声明</a>
+                <a href="#">用户协议</a>
+                <a href="#">联系合作</a>
+            </div>
+            <p class="copyright">Copyright © 2023 影视库 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
