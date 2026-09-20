@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="唱功专业评测与声乐教学平台，提供气息控制、共鸣运用、发声技巧及流行/美声声乐技巧深度解析。">
+    <meta name="keywords" content="唱功,声乐技巧,气息控制,共鸣,唱歌教学,流行声乐">
+    <title>唱功 - 专业声乐技巧解析与发声训练指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary-color: #ec4899;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-subscribe:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at top center, #e0e7ff 0%, var(--bg-color) 60%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Core Concepts */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .concept-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-color);
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background: #e0e7ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .concept-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .concept-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Vocal Training Guide */
+        .guide-wrapper {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media(min-width: 768px) {
+            .guide-wrapper {
+                flex-direction: row;
+            }
+        }
+
+        .guide-sidebar {
+            background: #1e1b4b;
+            color: white;
+            padding: 40px;
+            flex: 1;
+        }
+
+        .guide-sidebar h3 {
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+
+        .guide-nav li {
+            margin-bottom: 15px;
+        }
+
+        .guide-nav a {
+            display: block;
+            padding: 10px 15px;
+            border-radius: 8px;
+            color: #a5b4fc;
+            font-size: 0.95rem;
+        }
+
+        .guide-nav a:hover, .guide-nav a.active {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .guide-content {
+            padding: 40px;
+            flex: 2;
+        }
+
+        .guide-block {
+            display: none;
+        }
+
+        .guide-block.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .guide-block h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .guide-block p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .guide-block ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .guide-block li {
+            margin-bottom: 8px;
+        }
+
+        .practice-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .practice-box strong {
+            color: #15803d;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* Common Mistakes */
+        .mistakes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .mistake-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .mistake-icon {
+            color: #ef4444;
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        .mistake-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .mistake-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius-md);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: none;
+            border-top: 1px solid transparent;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #1e293b;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .guide-sidebar {
+                padding: 25px;
+            }
+
+            .guide-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <div class="logo">SingPro</div>
+        <nav>
+            <ul>
+                <li><a href="#concepts">核心概念</a></li>
+                <li><a href="#training">发声训练</a></li>
+                <li><a href="#tips">常见误区</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="btn-subscribe">开始练习</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>掌握专业<span>唱功</span>的科学方法</h1>
+            <p>从气息控制到共鸣运用，系统解析声乐技巧。无论流行、美声还是摇滚，找到最适合你的发声方式，突破音域瓶颈。</p>
+            <div class="hero-tags">
+                <span class="tag">气息支持</span>
+                <span class="tag">真假声转换</span>
+                <span class="tag">混声技巧</span>
+                <span class="tag">共鸣腔体</span>
+                <span class="tag">咬字吐字</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Concepts -->
+    <section id="concepts" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>唱功的三大基石</h2>
+                <p>理解声乐原理是提升唱功的第一步</p>
+            </div>
+            <div class="concept-grid">
+                <article class="concept-card">
+                    <div class="icon-box">🌬️</div>
+                    <h3>气息控制</h3>
+                    <p>气息是声音的动力源。专业的唱功要求建立横膈膜的支持，学会腹式呼吸，确保声音的稳定性和持久性，避免声带过度疲劳。</p>
+                </article>
+                <article class="concept-card">
+                    <div class="icon-box">🔊</div>
+                    <h3>共鸣运用</h3>
+                    <p>通过口腔、鼻腔、胸腔等共鸣腔体的协调运作，扩大音量并丰富音色。学会使用头声和混声，能让高音更明亮，低音更厚实。</p>
+                </article>
+                <article class="concept-card">
+                    <div class="icon-box">🧠</div>
+                    <h3>发声状态</h3>
+                    <p>保持放松的喉头位置和打开的喉咙通道是关键。错误的喉头状态会导致声音挤压、高音上不去，而正确的状态能让你唱得更轻松。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Guide -->
+    <section id="training" class="section" style="background-color: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>系统化发声训练指南</h2>
+                <p>循序渐进的练习方案，助你逐步提升</p>
+            </div>
+            <div class="guide-wrapper">
+                <aside class="guide-sidebar">
+                    <h3>训练课程</h3>
+                    <ul class="guide-nav">
+                        <li><a href="#" class="active" onclick="switchTab(event, 'tab-breath')">基础：气息与横膈膜</a></li>
+                        <li><a href="#" onclick="switchTab(event, 'tab-voice')">进阶：真假声转换</a></li>
+                        <li><a href="#" onclick="switchTab(event, 'tab-mix')">高阶：混声与高音突破</a></li>
+                        <li><a href="#" onclick="switchTab(event, 'tab-diction')">细节：咬字与情感</a></li>
+                    </ul>
+                </aside>
+                <div class="guide-content">
+                    <div id="tab-breath" class="guide-block active">
+                        <h3>1. 气息与横膈膜</h3>
+                        <p>唱功的核心在于“气”。初学者往往使用胸式呼吸，这会导致声音发紧。你需要学会腹式呼吸：</p>
+                        <ul>
+                            <li>吸气时，感受腹部像气球一样鼓起，肋骨向四周扩张。</li>
+                            <li>呼气时，保持腹部张力，缓慢均匀地吐气，不要突然泄气。</li>
+                            <li>练习“数数法”：吸气后，用均匀的气流数数，保持气息平稳。</li>
+                        </ul>
+                        <div class="practice-box">
+                            <strong>练习建议：</strong>
+                            每天进行5分钟的腹式呼吸练习，然后尝试在哼鸣时保持气息的稳定性。
+                        </div>
+                    </div>
+                    <div id="tab-voice" class="guide-block">
+                        <h3>2. 真假声转换</h3>
+                        <p>很多唱功问题源于真假声界限模糊。真声通常较实、位置较低；假声较虚、位置较高。</p>
+                        <p>练习方法：</p>
+                        <ul>
+                            <li>先发“哼鸣”，从低位置逐渐滑向高位置，感受声音的“头腔化”。</li>
+                            <li>尝试在真假声交界处进行滑动，寻找那个过渡点。</li>
+                            <li>不要刻意压低嗓子去唱假声，也不要刻意提嗓子去唱真声。</li>
+                        </ul>
+                    </div>
+                    <div id="tab-mix" class="guide-block">
+                        <h3>3. 混声与高音突破</h3>
+                        <p>混声是连接真假声的高级技巧，也是流行唱法中高音的秘诀。它结合了真声的力量和假声的头腔共鸣。</p>
+                        <p>技巧要点：</p>
+                        <ul>
+                            <li>保持喉咙打开，想象声音是从眉心发出的。</li>
+                            <li>在换声点时，增加气息的支撑，同时稍微提高软腭（抬起小舌头）。</li>
+                            <li>避免挤压喉咙，如果感觉刺痛，说明用力方向错误。</li>
+                        </ul>
+                    </div>
+                    <div id="tab-diction" class="guide-block">
+                        <h3>4. 咬字与情感表达</h3>
+                        <p>有了好的技巧，还需要清晰动人的表达。唱功不仅仅是音准和节奏，更是情感的传递。</p>
+                        <p>建议：</p>
+                        <ul>
+                            <li>每个字都要有“归韵”，让歌词听起来清晰悦耳。</li>
+                            <li>根据歌曲的情绪调整音色，悲伤时偏暗，激昂时偏亮。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Mistakes -->
+    <section id="tips" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见误区与纠正</h2>
+                <p>避开这些陷阱，你的唱功提升将事半功倍</p>
+            </div>
+            <div class="mistakes-grid">
+                <div class="mistake-item">
+                    <div class="mistake-icon">✖</div>
+                    <div class="mistake-content">
+                        <h4>过度用力</h4>
+                        <p>很多人认为唱高音必须用尽全力，其实这会导致声带闭合过紧，损伤声带。</p>
+                    </div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-icon">✖</div>
+                    <div class="mistake-content">
+                        <h4>喉头过高</h4>
+                        <p>紧张时喉头上提会挤压通道，导致声音发白、发虚。要学会放松喉头。</p>
+                    </div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-icon">✖</div>
+                    <div class="mistake-content">
+                        <h4>只练音高不练音色</h4>
+                        <p>盲目练习高音而不关注音色，会让声音变得干瘪单调，缺乏感染力。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="background-color: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">零基础多久能学会唱歌？ <span class="faq-icon">▼</span></div>
+                    <div class="faq-answer">每个人的声带条件和理解能力不同。通常坚持科学练习3-6个月，可以掌握基本的呼吸和音准，一年左右可以建立稳定的发声习惯。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">唱歌跑调怎么办？ <span class="faq-icon">▼</span></div>
+                    <div class="faq-answer">先进行音准训练（如视唱练耳）。使用乐器或调音软件辅助练习，多听原唱并模仿音高，逐渐培养对音高的敏感度。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何保护嗓子？ <span class="faq-icon">▼</span></div>
+                    <div class="faq-answer">避免过度用嗓，不要在极度疲劳或感冒时唱歌。多喝温水，少吃辛辣刺激食物。练习前充分热身，练习后适当休息。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px;">SingPro</div>
+                <p style="font-size: 0.9rem; line-height: 1.6;">致力于普及科学的声乐知识，帮助每一位热爱唱歌的人突破自我，找到属于自己的声音。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#concepts">核心概念</a></li>
+                    <li><a href="#training">发声训练</a></li>
+                    <li><a href="#tips">常见误区</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>资源推荐</h4>
+                <ul>
+                    <li><a href="#">声乐教材</a></li>
+                    <li><a href="#">练习曲库</a></li>
+                    <li><a href="#">设备指南</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SingPro 唱功教学平台. 保留所有权利.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Tab Switching Logic
+    function switchTab(event, tabId) {
+        // Remove active class from all tabs
+        const tabs = document.querySelectorAll('.guide-block');
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        // Remove active class from all nav links
+        const navLinks = document.querySelectorAll('.guide-nav a');
+        navLinks.forEach(link => link.classList.remove('active'));
+
+        // Add active class to clicked tab
+        document.getElementById(tabId).classList.add('active');
+        
+        // Add active class to clicked link
+        event.currentTarget.classList.add('active');
+    }
+
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+            
+            // Close all items
+            faqItems.forEach(i => i.classList.remove('open'));
+            
+            // Open clicked item if it was closed
+            if (!isOpen) {
+                item.classList.add('open');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
